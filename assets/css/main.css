@@ -2613,6 +2613,18 @@ input, select, textarea {
 
 /* Icons */
 
+/* Custom CSS to make the icons larger */
+.large-icons {
+    display: flex;
+    justify-content: center; /* Centers the icons horizontally */
+    list-style: none; /* Removes default list styling */
+    padding: 0; /* Removes default padding */
+}
+.large-icons .icon {
+    font-size: 2em; /* Adjust this value to make the icons larger or smaller */
+    margin: 0 20px; /* Optional: Add some spacing between the icons */
+}
+
 	ul.icons {
 		cursor: default;
 		list-style: none;
@@ -2635,7 +2647,7 @@ input, select, textarea {
 	}
 
 	header.major {
-		margin-bottom: 1em;
+		margin-bottom: 3em;
 	}
 
 		header.major h2 {
@@ -3042,6 +3054,7 @@ input, select, textarea {
 
 				.spotlight .image {
 					-moz-flex: 0 1 auto;
+					height: 100%;
 					-webkit-flex: 0 1 auto;
 					-ms-flex: 0 1 auto;
 					flex: 0 1 auto;
@@ -3068,144 +3081,66 @@ input, select, textarea {
 	}
 
 /* Header */
-
 	#header {
-		padding: 5em 5em 1em 5em ;
-		text-align: center;
+		padding: 2em 1em; /* Add padding around the header */
+		text-align: center; /* Center the logo horizontally */
 	}
 
-		#header h1 {
-			margin: 0 0 0.25em 0;
-		}
+	#header.alt {
+		padding: 2em 1em; /* Consistent padding for the alt variant */
+	}
 
-		#header p {
-			font-size: 1.25em;
-			letter-spacing: -0.025em;
+	#header .logo {
+		display: block;
+		margin: 0 auto; /* Center the logo container */
+		max-width: 90%; /* Ensure the logo doesn't overflow, with a bit of padding */
+	}
+
+	#header .logo img {
+		display: block;
+		width: 100%; /* Make the image responsive */
+		height: auto; /* Maintain aspect ratio */
+		margin: 0 auto; /* Center the image within the container */
+		border-radius: 8px; /* Rounded corners */
+		position: relative; /* Needed for pseudo-element */
+		z-index: 1; /* Ensure the image is above the pseudo-element */
+		background: #00120B; /* Set a background color for the image */
+		padding: 2px; /* Space for the gradient border */
+		box-sizing: border-box; /* Ensure padding is included in dimensions */
+	}
+	
+	#header .logo img::before {
+		content: '';
+		position: absolute;
+		top: -2px; /* Offset for the border */
+		left: -2px; /* Offset for the border */
+		right: -2px;
+		bottom: -2px;
+		background: linear-gradient(to right, #6A6B83, #00120B); /* Gradient background */
+		border-radius: 10px; /* Slightly larger radius to account for the border */
+		z-index: -1; /* Place behind the image */
+	}
+
+	/* Media Queries for Smaller Screens */
+	@media screen and (max-width: 980px) {
+		#header {
+			padding: 1.5em 1em; /* Slightly reduce padding on smaller screens */
 		}
 
 		#header.alt {
-			padding: 7em 5em 4em 5em ;
+			padding: 1.5em 1em;
+		}
+	}
+
+	@media screen and (max-width: 736px) {
+		#header {
+			padding: 1em 0.5em; /* Further reduce padding on mobile */
 		}
 
-			#header.alt h1 {
-				font-size: 3.25em;
-			}
-
-			#header.alt > * {
-				-moz-transition: opacity 3s ease;
-				-webkit-transition: opacity 3s ease;
-				-ms-transition: opacity 3s ease;
-				transition: opacity 3s ease;
-				-moz-transition-delay: 0.5s;
-				-webkit-transition-delay: 0.5s;
-				-ms-transition-delay: 0.5s;
-				transition-delay: 0.5s;
-				opacity: 1;
-			}
-
-			#header.alt .logo {
-				-moz-transition: opacity 1.25s ease, -moz-transform 0.5s ease;
-				-webkit-transition: opacity 1.25s ease, -webkit-transform 0.5s ease;
-				-ms-transition: opacity 1.25s ease, -ms-transform 0.5s ease;
-				transition: opacity 1.25s ease, transform 0.5s ease;
-				-moz-transition-delay: 0s;
-				-webkit-transition-delay: 0s;
-				-ms-transition-delay: 0s;
-				transition-delay: 0s;
-				display: block;
-				margin: 0 0 1.5em 0;
-			}
-
-				#header.alt .logo img {
-					display: block;
-					margin: 0 auto;
-					max-width: 75%;
-				}
-
-		@media screen and (max-width: 1280px) {
-
-			#header {
-				padding: 4em 4em 0.1em 4em ;
-			}
-
-				#header.alt {
-					padding: 6em 4em 3em 4em ;
-				}
-
+		#header.alt {
+			padding: 1em 0.5em;
 		}
-
-		@media screen and (max-width: 980px) {
-
-			#header {
-				padding: 4em 3em 0.1em 3em ;
-			}
-
-				#header.alt {
-					padding: 5em 3em 2em 3em ;
-				}
-
-		}
-
-		@media screen and (max-width: 736px) {
-
-			#header {
-				padding: 3em 2em 0.1em 2em ;
-			}
-
-				#header p {
-					font-size: 1em;
-					letter-spacing: 0;
-				}
-
-					#header p br {
-						display: none;
-					}
-
-				#header.alt {
-					padding: 4em 2em 1em 2em ;
-				}
-
-					#header.alt h1 {
-						font-size: 2.5em;
-					}
-
-		}
-
-		@media screen and (max-width: 480px) {
-
-			#header {
-				padding: 3em 1.5em 0.1em 1.5em ;
-			}
-
-				#header.alt {
-					padding: 4em 1.5em 1em 1.5em ;
-				}
-
-		}
-
-		@media screen and (max-width: 360px) {
-
-			#header {
-				padding: 2.5em 1em 0.1em 1em ;
-			}
-
-				#header.alt {
-					padding: 3.5em 1em 0.5em 1em ;
-				}
-
-		}
-
-		body.is-preload #header.alt > * {
-			opacity: 0;
-		}
-
-		body.is-preload #header.alt .logo {
-			-moz-transform: scale(0.8) rotate(-30deg);
-			-webkit-transform: scale(0.8) rotate(-30deg);
-			-ms-transform: scale(0.8) rotate(-30deg);
-			transform: scale(0.8) rotate(-30deg);
-		}
-
+	}
 /* Nav */
 
 	#nav {
@@ -3256,7 +3191,7 @@ input, select, textarea {
 		}
 
 		#nav + #main {
-			padding-top: 1.25em;
+			padding-top: 4.25em;
 		}
 
 		#nav ul {
@@ -3579,7 +3514,7 @@ input, select, textarea {
 		}
 
 		#main > .main {
-			padding: 0em 5em 3em 5em ;
+			padding: 5em 5em 3em 5em ;
 			border-top: solid 1px #dddddd;
 		}
 
@@ -3606,7 +3541,7 @@ input, select, textarea {
 		@media screen and (max-width: 1280px) {
 
 			#main > .main {
-				padding: 1em 4em 2em 4em ;
+				padding: 0em 4em 2em 4em ;
 			}
 
 				#main > .main > .image.main:first-child {
@@ -3662,11 +3597,11 @@ input, select, textarea {
 			}
 
 				#main > .main {
-					padding: 1.25em 1em 0.5em 1em ;
+					padding: 2.5em 1em 0.5em 1em ;
 				}
 
 					#main > .main > .image.main:first-child {
-						margin: -5em 0 1.5em -1em;
+						margin: -2.5em 0 1.5em -1em;
 						width: calc(100% + 2em);
 						border-radius: 0;
 					}
@@ -3676,6 +3611,70 @@ input, select, textarea {
 						}
 
 		}
+/* Gallery Container */
+		.gallery-container {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: center;
+			gap: 20px; /* Space between gallery items */
+			padding: 20px;
+		}
+
+		/* Gallery Item */
+		.gallery-item {
+			position: relative;
+			width: 300px; /* Fixed width for each item */
+			text-align: center;
+			overflow: hidden;
+			border-radius: 10px;
+			box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+			transition: transform 0.3s ease, box-shadow 0.3s ease;
+		}
+
+		.gallery-item:hover {
+			transform: scale(1.05); /* Slightly enlarge on hover */
+			box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+		}
+
+		/* Gallery Image */
+		.gallery-image {
+			width: 100%;
+			height: auto;
+			display: block;
+			border-radius: 10px 10px 0 0; /* Rounded corners on top */
+		}
+
+		/* Gallery Description */
+		.gallery-description {
+			padding: 15px;
+			background: #fff; /* White background for the description */
+			border-radius: 0 0 10px 10px; /* Rounded corners on bottom */
+		}
+
+		.gallery-description h3 {
+			margin: 0 0 10px 0;
+			font-size: 1.5em;
+			color: #333; /* Dark text for contrast */
+		}
+
+		.gallery-description p {
+			margin: 0;
+			font-size: 1em;
+			color: #666; /* Lighter text for the description */
+		}
+		/* Ensure Lightbox overlay and controls are visible */
+		.lb-nav a.lb-prev,
+		.lb-nav a.lb-next,
+		.lb-data .lb-close {
+			opacity: 1 !important;
+		}
+
+		/* Ensure Lightbox images are centered */
+		.lightbox .lb-image {
+			display: block;
+			margin: 0 auto;
+		}
+
 
 /* Footer */
 
