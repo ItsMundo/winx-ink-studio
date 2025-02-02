@@ -100,7 +100,7 @@ input, select, textarea {
 
 	body {
 		background-color: #4A181B;
-		background-image: url("images/overlay.png"), linear-gradient(45deg, #00120b 15%, #4A181B 85%);
+		background-image: url("images/overlay.png"), linear-gradient(45deg,#4A181B 15%, #000000 85%);
 		color: #cecece;
 	}
 
@@ -3098,14 +3098,14 @@ input, select, textarea {
 
 	#header .logo img {
 		display: block;
-		width: 100%; /* Make the image responsive */
+		width: 45%; /* Make the image responsive */
 		height: auto; /* Maintain aspect ratio */
 		margin: 0 auto; /* Center the image within the container */
 		border-radius: 8px; /* Rounded corners */
 		position: relative; /* Needed for pseudo-element */
 		z-index: 1; /* Ensure the image is above the pseudo-element */
-		background: #00120B; /* Set a background color for the image */
-		padding: 2px; /* Space for the gradient border */
+		background: #000000; /* Set a background color for the image */
+		padding: 1px; /* Space for the gradient border */
 		box-sizing: border-box; /* Ensure padding is included in dimensions */
 	}
 	
