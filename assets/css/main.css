@@ -3663,17 +3663,17 @@ input, select, textarea {
 			color: #666; /* Lighter text for the description */
 		}
 		/* Ensure Lightbox overlay and controls are visible */
-		.lb-nav a.lb-prev,
-		.lb-nav a.lb-next,
-		.lb-data .lb-close {
-			opacity: 1 !important;
-		}
+	.lb-nav a.lb-prev,
+	.lb-nav a.lb-next,
+	.lb-data .lb-close {
+		opacity: 1 !important;
+	}
 
-		/* Ensure Lightbox images are centered */
-		.lightbox .lb-image {
-			display: block;
-			margin: 0 auto;
-		}
+	/* Ensure Lightbox images are centered */
+	.lightbox .lb-image {
+		display: block;
+		margin: 0 auto;
+	}
 
 
 /* Footer */
