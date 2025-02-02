@@ -3675,6 +3675,51 @@ input, select, textarea {
 		margin: 0 auto;
 	}
 
+	/* Booking Instructions */
+.booking-instructions {
+    text-align: left;
+    max-width: 800px;
+    margin: 0 auto 2em auto;
+    padding: 0 20px;
+}
+
+.booking-instructions ol {
+    padding-left: 20px;
+}
+
+.booking-instructions li {
+    margin-bottom: 1em;
+    line-height: 1.6;
+}
+
+.booking-instructions strong {
+    color: #333; /* Darker text for emphasis */
+}
+/* Studio Policies & Tips */
+.content {
+    text-align: left;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.content h3 {
+    margin-top: 1.5em;
+    color: #333; /* Darker text for headings */
+}
+
+.content ul {
+    padding-left: 20px;
+}
+
+.content li {
+    margin-bottom: 1em;
+    line-height: 1.6;
+}
+
+.content strong {
+    color: #333; /* Darker text for emphasis */
+}
 
 /* Footer */
 
